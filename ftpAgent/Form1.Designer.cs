@@ -31,13 +31,20 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.button1 = new System.Windows.Forms.Button();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.treeView1 = new System.Windows.Forms.TreeView();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.chTopMost = new System.Windows.Forms.CheckBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.dateTime1 = new System.Windows.Forms.DateTimePicker();
+            this.label7 = new System.Windows.Forms.Label();
+            this.btnSelectFoler = new System.Windows.Forms.Button();
+            this.txtSave = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.txtNumber = new System.Windows.Forms.TextBox();
             this.chAll = new System.Windows.Forms.CheckBox();
@@ -52,19 +59,42 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtPath = new System.Windows.Forms.TextBox();
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
-            this.txtSave = new System.Windows.Forms.TextBox();
-            this.btnSelectFoler = new System.Windows.Forms.Button();
-            this.label7 = new System.Windows.Forms.Label();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.label8 = new System.Windows.Forms.Label();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // button1
+            // 
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.ImageIndex = 11;
+            this.button1.ImageList = this.imageList1;
+            this.button1.Location = new System.Drawing.Point(7, 440);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(508, 26);
+            this.button1.TabIndex = 19;
+            this.toolTip1.SetToolTip(this.button1, "Сохранить настройки");
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // imageList1
+            // 
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "folder.png");
+            this.imageList1.Images.SetKeyName(1, "iconfinder_List_132709.png");
+            this.imageList1.Images.SetKeyName(2, "connect.png");
+            this.imageList1.Images.SetKeyName(3, "door_in.png");
+            this.imageList1.Images.SetKeyName(4, "home.png");
+            this.imageList1.Images.SetKeyName(5, "iconfinder_General_Office_65_2530844.png");
+            this.imageList1.Images.SetKeyName(6, "iconfinder_mp3_47222.png");
+            this.imageList1.Images.SetKeyName(7, "iconfinder_djvu_332632.png");
+            this.imageList1.Images.SetKeyName(8, "iconfinder_pdf_272699.png");
+            this.imageList1.Images.SetKeyName(9, "iconfinder_jpg_7553.png");
+            this.imageList1.Images.SetKeyName(10, "iconfinder_22_1555770.png");
+            this.imageList1.Images.SetKeyName(11, "iconfinder_floppy_disk_save_103863.png");
             // 
             // statusStrip1
             // 
@@ -110,23 +140,6 @@
             this.treeView1.TabIndex = 0;
             this.treeView1.DoubleClick += new System.EventHandler(this.treeView1_DoubleClick);
             // 
-            // imageList1
-            // 
-            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
-            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList1.Images.SetKeyName(0, "folder.png");
-            this.imageList1.Images.SetKeyName(1, "iconfinder_List_132709.png");
-            this.imageList1.Images.SetKeyName(2, "connect.png");
-            this.imageList1.Images.SetKeyName(3, "door_in.png");
-            this.imageList1.Images.SetKeyName(4, "home.png");
-            this.imageList1.Images.SetKeyName(5, "iconfinder_General_Office_65_2530844.png");
-            this.imageList1.Images.SetKeyName(6, "iconfinder_mp3_47222.png");
-            this.imageList1.Images.SetKeyName(7, "iconfinder_djvu_332632.png");
-            this.imageList1.Images.SetKeyName(8, "iconfinder_pdf_272699.png");
-            this.imageList1.Images.SetKeyName(9, "iconfinder_jpg_7553.png");
-            this.imageList1.Images.SetKeyName(10, "iconfinder_22_1555770.png");
-            this.imageList1.Images.SetKeyName(11, "iconfinder_floppy_disk_save_103863.png");
-            // 
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.Color.Cornsilk;
@@ -146,9 +159,9 @@
             this.groupBox1.AutoSize = true;
             this.groupBox1.BackColor = System.Drawing.Color.Snow;
             this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Controls.Add(this.checkBox1);
+            this.groupBox1.Controls.Add(this.chTopMost);
             this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Controls.Add(this.dateTimePicker1);
+            this.groupBox1.Controls.Add(this.dateTime1);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.btnSelectFoler);
             this.groupBox1.Controls.Add(this.txtSave);
@@ -171,6 +184,58 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Настройки:";
+            // 
+            // chTopMost
+            // 
+            this.chTopMost.AutoSize = true;
+            this.chTopMost.Location = new System.Drawing.Point(420, 265);
+            this.chTopMost.Name = "chTopMost";
+            this.chTopMost.Size = new System.Drawing.Size(93, 17);
+            this.chTopMost.TabIndex = 18;
+            this.chTopMost.Text = "По верх окон";
+            this.chTopMost.UseVisualStyleBackColor = true;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(293, 354);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(87, 13);
+            this.label8.TabIndex = 17;
+            this.label8.Text = "Дата проверки:";
+            // 
+            // dateTime1
+            // 
+            this.dateTime1.Location = new System.Drawing.Point(296, 370);
+            this.dateTime1.Name = "dateTime1";
+            this.dateTime1.Size = new System.Drawing.Size(217, 20);
+            this.dateTime1.TabIndex = 16;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(3, 290);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(125, 13);
+            this.label7.TabIndex = 15;
+            this.label7.Text = "Папка для сохранения:";
+            // 
+            // btnSelectFoler
+            // 
+            this.btnSelectFoler.Location = new System.Drawing.Point(466, 304);
+            this.btnSelectFoler.Name = "btnSelectFoler";
+            this.btnSelectFoler.Size = new System.Drawing.Size(47, 22);
+            this.btnSelectFoler.TabIndex = 14;
+            this.btnSelectFoler.Text = "...";
+            this.btnSelectFoler.UseVisualStyleBackColor = true;
+            this.btnSelectFoler.Click += new System.EventHandler(this.btnSelectFoler_Click);
+            // 
+            // txtSave
+            // 
+            this.txtSave.Location = new System.Drawing.Point(7, 306);
+            this.txtSave.Name = "txtSave";
+            this.txtSave.Size = new System.Drawing.Size(453, 20);
+            this.txtSave.TabIndex = 13;
             // 
             // label6
             // 
@@ -288,73 +353,9 @@
             this.txtPath.TabIndex = 0;
             this.txtPath.Text = "Информацинное взаимодействие/Контроль по ч. 5/ВходЯщие/";
             // 
-            // txtSave
-            // 
-            this.txtSave.Location = new System.Drawing.Point(7, 306);
-            this.txtSave.Name = "txtSave";
-            this.txtSave.Size = new System.Drawing.Size(453, 20);
-            this.txtSave.TabIndex = 13;
-            // 
-            // btnSelectFoler
-            // 
-            this.btnSelectFoler.Location = new System.Drawing.Point(466, 304);
-            this.btnSelectFoler.Name = "btnSelectFoler";
-            this.btnSelectFoler.Size = new System.Drawing.Size(47, 22);
-            this.btnSelectFoler.TabIndex = 14;
-            this.btnSelectFoler.Text = "...";
-            this.btnSelectFoler.UseVisualStyleBackColor = true;
-            this.btnSelectFoler.Click += new System.EventHandler(this.btnSelectFoler_Click);
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(3, 290);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(125, 13);
-            this.label7.TabIndex = 15;
-            this.label7.Text = "Папка для сохранения:";
-            // 
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(296, 370);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(217, 20);
-            this.dateTimePicker1.TabIndex = 16;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(293, 354);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(87, 13);
-            this.label8.TabIndex = 17;
-            this.label8.Text = "Дата проверки:";
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(420, 265);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(93, 17);
-            this.checkBox1.TabIndex = 18;
-            this.checkBox1.Text = "По верх окон";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ImageIndex = 11;
-            this.button1.ImageList = this.imageList1;
-            this.button1.Location = new System.Drawing.Point(7, 440);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(508, 26);
-            this.button1.TabIndex = 19;
-            this.toolTip1.SetToolTip(this.button1, "Сохранить настройки");
-            this.button1.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -411,9 +412,9 @@
         private System.Windows.Forms.TextBox txtSave;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox chTopMost;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dateTime1;
     }
 }
 

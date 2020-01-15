@@ -22,3 +22,16 @@ C:\ftp_agent2\ftpAgent\obj\Debug\ftpAgent.exe
 C:\ftp_agent2\ftpAgent\obj\Debug\ftpAgent.pdb
 C:\ftp_agent2\ftpAgent\obj\Debug\ftpAgent.csprojAssemblyReference.cache
 C:\ftp_agent2\ftpAgent\obj\Debug\ftpAgent.csproj.CopyComplete
+D:\ftp_agent2\ftpAgent\bin\Debug\ftpAgent.exe.config
+D:\ftp_agent2\ftpAgent\bin\Debug\ftpAgent.exe
+D:\ftp_agent2\ftpAgent\bin\Debug\ftpAgent.pdb
+D:\ftp_agent2\ftpAgent\bin\Debug\BytesRoad.Net.Ftp.dll
+D:\ftp_agent2\ftpAgent\bin\Debug\BytesRoad.Net.Sockets.dll
+D:\ftp_agent2\ftpAgent\obj\Debug\ftpAgent.csprojAssemblyReference.cache
+D:\ftp_agent2\ftpAgent\obj\Debug\ftpAgent.Form1.resources
+D:\ftp_agent2\ftpAgent\obj\Debug\ftpAgent.Properties.Resources.resources
+D:\ftp_agent2\ftpAgent\obj\Debug\ftpAgent.csproj.GenerateResource.cache
+D:\ftp_agent2\ftpAgent\obj\Debug\ftpAgent.csproj.CopyComplete
+D:\ftp_agent2\ftpAgent\obj\Debug\ftpAgent.exe
+D:\ftp_agent2\ftpAgent\obj\Debug\ftpAgent.pdb
+D:\ftp_agent2\ftpAgent\bin\Debug\INIManager.dll
