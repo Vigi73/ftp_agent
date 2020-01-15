@@ -57,9 +57,9 @@
             this.txtPort = new System.Windows.Forms.TextBox();
             this.txtServer = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtPath = new System.Windows.Forms.TextBox();
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.txtPath = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -252,7 +252,6 @@
             this.txtNumber.Name = "txtNumber";
             this.txtNumber.Size = new System.Drawing.Size(208, 20);
             this.txtNumber.TabIndex = 11;
-            this.txtNumber.Text = "Отдел № 19";
             this.txtNumber.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // chAll
@@ -290,7 +289,6 @@
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(210, 20);
             this.txtPassword.TabIndex = 7;
-            this.txtPassword.Text = "1234Aa24";
             this.txtPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // txtLogin
@@ -299,7 +297,6 @@
             this.txtLogin.Name = "txtLogin";
             this.txtLogin.Size = new System.Drawing.Size(211, 20);
             this.txtLogin.TabIndex = 6;
-            this.txtLogin.Text = "ofk24";
             this.txtLogin.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label3
@@ -326,7 +323,6 @@
             this.txtPort.Name = "txtPort";
             this.txtPort.Size = new System.Drawing.Size(91, 20);
             this.txtPort.TabIndex = 3;
-            this.txtPort.Text = "21";
             // 
             // txtServer
             // 
@@ -334,7 +330,6 @@
             this.txtServer.Name = "txtServer";
             this.txtServer.Size = new System.Drawing.Size(404, 20);
             this.txtServer.TabIndex = 2;
-            this.txtServer.Text = "10.17.0.58";
             // 
             // label1
             // 
@@ -345,17 +340,17 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Базовый путь:";
             // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
             // txtPath
             // 
             this.txtPath.Location = new System.Drawing.Point(6, 47);
             this.txtPath.Name = "txtPath";
             this.txtPath.Size = new System.Drawing.Size(510, 20);
             this.txtPath.TabIndex = 0;
-            this.txtPath.Text = "Информацинное взаимодействие/Контроль по ч. 5/ВходЯщие/";
-            // 
-            // openFileDialog1
-            // 
-            this.openFileDialog1.FileName = "openFileDialog1";
+            this.txtPath.Text = "/";
             // 
             // Form1
             // 
@@ -392,7 +387,6 @@
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtPath;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TreeView treeView1;
@@ -415,6 +409,7 @@
         private System.Windows.Forms.CheckBox chTopMost;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.DateTimePicker dateTime1;
+        private System.Windows.Forms.TextBox txtPath;
     }
 }
 

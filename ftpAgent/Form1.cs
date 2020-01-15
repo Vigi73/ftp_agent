@@ -111,9 +111,12 @@ namespace ftpAgent
             string FTP_USER = txtLogin.Text.Trim();
             string FTP_PASSWORD = txtPassword.Text.Trim();
 
-           
+
             try
             {
+                if (txtPath.Text == "")
+                    txtPath.Text = "/";
+
                 client.Connect(TimeoutFTP, FTP_SERVER, FTP_PORT);
                 client.Login(TimeoutFTP, FTP_USER, FTP_PASSWORD);
                 client.ChangeDirectory(2000, txtPath.Text); // Начальная папка при старте...
