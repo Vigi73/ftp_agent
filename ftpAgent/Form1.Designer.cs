@@ -60,6 +60,9 @@
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.txtPath = new System.Windows.Forms.TextBox();
+            this.stbDate = new System.Windows.Forms.ToolStripStatusLabel();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.statusStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -98,6 +101,8 @@
             // 
             // statusStrip1
             // 
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.stbDate});
             this.statusStrip1.Location = new System.Drawing.Point(0, 510);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(538, 22);
@@ -352,6 +357,18 @@
             this.txtPath.TabIndex = 0;
             this.txtPath.Text = "/";
             // 
+            // stbDate
+            // 
+            this.stbDate.Name = "stbDate";
+            this.stbDate.Size = new System.Drawing.Size(89, 17);
+            this.stbDate.Text = "Дата слежения:";
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -367,6 +384,8 @@
             this.Text = "FTP-Агент 2.0";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
@@ -410,6 +429,8 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.DateTimePicker dateTime1;
         private System.Windows.Forms.TextBox txtPath;
+        private System.Windows.Forms.ToolStripStatusLabel stbDate;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 

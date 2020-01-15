@@ -21,12 +21,14 @@ namespace ftpAgent
         public Form1()
         {
             InitializeComponent();
-           
+            
+
             //MessageBox.Show(Tim) ///
 
         }
         
         FtpClient client = new FtpClient();
+        string timeWork;
 
         
 
@@ -173,8 +175,12 @@ namespace ftpAgent
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            
             getDataFromIni();
+           
+
+
+
 
             connect();
         }
@@ -205,6 +211,10 @@ namespace ftpAgent
 
             txtSave.Text = manager.GetPrivateString("main", "save");
             dateTime1.Text = manager.GetPrivateString("main", "data");
+            
+            timeWork = manager.GetPrivateString("main", "data").ToString();
+          
+
         }
 
 
@@ -235,6 +245,7 @@ namespace ftpAgent
         private void button1_Click(object sender, EventArgs e)
         {
             saveAllData();
+            getDataFromIni();
         }
 
         public void saveAllData()
@@ -250,7 +261,13 @@ namespace ftpAgent
             manager.WritePrivateString("main", "number", txtNumber.Text.Trim());
             manager.WritePrivateString("main", "topmost", chTopMost.Checked.ToString());
             manager.WritePrivateString("main", "save", txtSave.Text.Trim());
-            manager.WritePrivateString("main", "data", dateTime1.Text.Trim());
+            manager.WritePrivateString("main", "data", dateTime1.Value.ToString());
+            
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            stbDate.Text = String.Format("Дата слежения: {0}", timeWork.Split(' ')[0]);
         }
     }
 }
