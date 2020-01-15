@@ -211,6 +211,7 @@ namespace ftpAgent
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)
         {
             client.Disconnect(1000);
+            saveAllData();
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -232,6 +233,11 @@ namespace ftpAgent
         }
 
         private void button1_Click(object sender, EventArgs e)
+        {
+            saveAllData();
+        }
+
+        public void saveAllData()
         {
             string basePath = Path.Combine(appPath);
             INIManager.Class1.INIManager manager = new Class1.INIManager(basePath + @"/my.ini");
