@@ -304,6 +304,7 @@ namespace ftpAgent
         private void timer1_Tick(object sender, EventArgs e)
         {
             stbDate.Text = String.Format("Дата слежения: {0}", timeWork.Split(' ')[0]);
+            this.TopMost = chTopMost.Checked;
         }
 
         private void upToolStripMenuItem_Click(object sender, EventArgs e)
