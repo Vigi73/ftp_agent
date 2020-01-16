@@ -317,5 +317,11 @@ namespace ftpAgent
         {
             this.Close();
         }
+
+        private void connectToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            treeView1.Nodes.Clear();
+            connect();
+        }
     }
 }
