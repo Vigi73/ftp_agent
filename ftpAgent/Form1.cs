@@ -98,9 +98,15 @@ namespace ftpAgent
                         }
                     }
 
-
-
-                    treeView1.Nodes.Add(node);
+                    //Проверка показать все или отдел...
+                    if (chAll.Checked) 
+                        { treeView1.Nodes.Add(node); }
+                    else 
+                        {
+                            if (node.Text.StartsWith(txtNumber.Text.Trim()) || node.Text.StartsWith("+"+txtNumber.Text.Trim()))
+                                treeView1.Nodes.Add(node);
+                        }
+                    
                 }
                       
         }
@@ -145,9 +151,9 @@ namespace ftpAgent
                 string nowDate = timeWork.Split(' ')[0];
                 string currentPath = String.Format("{0}{1}/{2}. {3}/{4}", txtPath.Text, folderData, nDate.ToString(), month[nDate], nowDate);
                 client.ChangeDirectory(2000, currentPath);
-                
 
-                /* client.ChangeDirectory(2000, txtPath.Text); // Начальная папка при старте...*/
+
+                //client.ChangeDirectory(2000, txtPath.Text); // Начальная папка при старте...
                 GetItemsFromFtp();
 
             }
