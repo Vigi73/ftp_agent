@@ -34,6 +34,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.stbDate = new System.Windows.Forms.ToolStripStatusLabel();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.treeView1 = new System.Windows.Forms.TreeView();
@@ -57,16 +58,21 @@
             this.txtPort = new System.Windows.Forms.TextBox();
             this.txtServer = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.txtPath = new System.Windows.Forms.TextBox();
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.txtPath = new System.Windows.Forms.TextBox();
-            this.stbDate = new System.Windows.Forms.ToolStripStatusLabel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.upToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.connectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
+            this.ваходToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
@@ -109,6 +115,12 @@
             this.statusStrip1.TabIndex = 0;
             this.statusStrip1.Text = "statusStrip1";
             // 
+            // stbDate
+            // 
+            this.stbDate.Name = "stbDate";
+            this.stbDate.Size = new System.Drawing.Size(92, 17);
+            this.stbDate.Text = "Дата слежения:";
+            // 
             // tabControl1
             // 
             this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -135,6 +147,7 @@
             // 
             // treeView1
             // 
+            this.treeView1.ContextMenuStrip = this.contextMenuStrip1;
             this.treeView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.treeView1.ImageIndex = 0;
             this.treeView1.ImageList = this.imageList1;
@@ -345,10 +358,6 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Базовый путь:";
             // 
-            // openFileDialog1
-            // 
-            this.openFileDialog1.FileName = "openFileDialog1";
-            // 
             // txtPath
             // 
             this.txtPath.Location = new System.Drawing.Point(6, 47);
@@ -357,17 +366,54 @@
             this.txtPath.TabIndex = 0;
             this.txtPath.Text = "/";
             // 
-            // stbDate
+            // openFileDialog1
             // 
-            this.stbDate.Name = "stbDate";
-            this.stbDate.Size = new System.Drawing.Size(89, 17);
-            this.stbDate.Text = "Дата слежения:";
+            this.openFileDialog1.FileName = "openFileDialog1";
             // 
             // timer1
             // 
             this.timer1.Enabled = true;
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.upToolStripMenuItem,
+            this.connectToolStripMenuItem,
+            this.toolStripMenuItem2,
+            this.ваходToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(181, 98);
+            // 
+            // upToolStripMenuItem
+            // 
+            this.upToolStripMenuItem.Image = global::ftpAgent.Properties.Resources.iconfinder_Open_1493293;
+            this.upToolStripMenuItem.Name = "upToolStripMenuItem";
+            this.upToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.upToolStripMenuItem.Text = "...";
+            this.upToolStripMenuItem.ToolTipText = "Переход на уровень выше";
+            this.upToolStripMenuItem.Click += new System.EventHandler(this.upToolStripMenuItem_Click);
+            // 
+            // connectToolStripMenuItem
+            // 
+            this.connectToolStripMenuItem.Image = global::ftpAgent.Properties.Resources.disconnect;
+            this.connectToolStripMenuItem.Name = "connectToolStripMenuItem";
+            this.connectToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.connectToolStripMenuItem.Text = "Подключение";
+            // 
+            // toolStripMenuItem2
+            // 
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(177, 6);
+            // 
+            // ваходToolStripMenuItem
+            // 
+            this.ваходToolStripMenuItem.Image = global::ftpAgent.Properties.Resources.door_in;
+            this.ваходToolStripMenuItem.Name = "ваходToolStripMenuItem";
+            this.ваходToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.ваходToolStripMenuItem.Text = "Выход";
+            this.ваходToolStripMenuItem.Click += new System.EventHandler(this.ваходToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -392,6 +438,7 @@
             this.tabPage2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -431,6 +478,11 @@
         private System.Windows.Forms.TextBox txtPath;
         private System.Windows.Forms.ToolStripStatusLabel stbDate;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem upToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem connectToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem ваходToolStripMenuItem;
     }
 }
 

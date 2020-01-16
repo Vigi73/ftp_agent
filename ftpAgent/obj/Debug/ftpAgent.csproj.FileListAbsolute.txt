@@ -35,3 +35,4 @@ D:\ftp_agent2\ftpAgent\obj\Debug\ftpAgent.csproj.CopyComplete
 D:\ftp_agent2\ftpAgent\obj\Debug\ftpAgent.exe
 D:\ftp_agent2\ftpAgent\obj\Debug\ftpAgent.pdb
 D:\ftp_agent2\ftpAgent\bin\Debug\INIManager.dll
+C:\ftp_agent2\ftpAgent\bin\Debug\INIManager.dll

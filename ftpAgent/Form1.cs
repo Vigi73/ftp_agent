@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -121,7 +122,32 @@ namespace ftpAgent
 
                 client.Connect(TimeoutFTP, FTP_SERVER, FTP_PORT);
                 client.Login(TimeoutFTP, FTP_USER, FTP_PASSWORD);
-                client.ChangeDirectory(2000, txtPath.Text); // Начальная папка при старте...
+
+                List<string> month = new List<string>  {
+                    "",
+                    "Январь",
+                    "Февраль",
+                    "Март",
+                    "Апрель",
+                    "Май",
+                    "Июнь",
+                    "Июль",
+                    "Август",
+                    "СентЯбрь",
+                    "ОктЯбрь",
+                    "НоЯбрь",
+                    "Декабрь",
+                    
+                };
+                //конструктор путя FTP
+                string folderData = timeWork.Split(' ')[0].Split('.')[2].Trim();
+                int nDate = int.Parse(timeWork.Split(' ')[0].Split('.')[1]);
+                string nowDate = timeWork.Split(' ')[0];
+                string currentPath = String.Format("{0}{1}/{2}. {3}/{4}", txtPath.Text, folderData, nDate.ToString(), month[nDate], nowDate);
+                client.ChangeDirectory(2000, currentPath);
+                
+
+                /* client.ChangeDirectory(2000, txtPath.Text); // Начальная папка при старте...*/
                 GetItemsFromFtp();
 
             }
@@ -152,12 +178,16 @@ namespace ftpAgent
                     {
                         if (treeView1.SelectedNode.Tag.ToString() == "0")
                         {
-                            if (folderBrowserDialog1.ShowDialog() == DialogResult.OK)
+                            
                             {
                                 //MessageBox.Show(treeView1.SelectedNode.Text);
                                 client.GetFile(2000,
-                                    folderBrowserDialog1.SelectedPath + @"\" + treeView1.SelectedNode.Text,
+                                    txtSave.Text + @"\" + treeView1.SelectedNode.Text,
                                     treeView1.SelectedNode.Text);
+                                
+                                string files = txtSave.Text + @"\" + treeView1.SelectedNode.Text;
+                                Process.Start(files);
+
                             }
                         }
                     }
@@ -234,7 +264,7 @@ namespace ftpAgent
             throw new System.NotImplementedException();
         }
 
-        private void btnSelectFoler_Click(object sender, EventArgs e)
+        private void btnSelectFoler_Click(object sender, EventArgs e) // Selected folder for save file
         {
             if (folderBrowserDialog1.ShowDialog() == DialogResult.OK)
             {
@@ -268,6 +298,18 @@ namespace ftpAgent
         private void timer1_Tick(object sender, EventArgs e)
         {
             stbDate.Text = String.Format("Дата слежения: {0}", timeWork.Split(' ')[0]);
+        }
+
+        private void upToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            treeView1.Nodes.Clear();
+            client.ChangeDirectoryUp(2000);
+            GetItemsFromFtp();
+        }
+
+        private void ваходToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
