@@ -282,6 +282,7 @@ namespace ftpAgent
         {
             saveAllData();
             getDataFromIni();
+            treeView1.Nodes.Clear();
             connect();
         }
 
