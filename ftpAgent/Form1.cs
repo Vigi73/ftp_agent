@@ -282,6 +282,7 @@ namespace ftpAgent
         {
             saveAllData();
             getDataFromIni();
+            connect();
         }
 
         public void saveAllData()
